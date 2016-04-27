@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LH9-8Y-sa4">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="BZm-Rn-mIh">
+            <objects>
+                <navigationController id="LH9-8Y-sa4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hfj-Ub-JLb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZQw-rh-1XF" kind="relationship" relationship="rootViewController" id="aGF-Ve-ion"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fkt-7Q-HnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514" y="255"/>
+        </scene>
+        <!--IAP Demo-->
+        <scene sceneID="fTU-t2-ieU">
+            <objects>
+                <viewController id="ZQw-rh-1XF" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l7m-Es-y0a"/>
+                        <viewControllerLayoutGuide type="bottom" id="pSn-jQ-2mj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xoz-qr-Eqk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzj-Uo-eOH">
+                                <rect key="frame" x="285" y="154" width="31" height="30"/>
+                                <state key="normal" title="Buy ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showBuyList:" destination="ZQw-rh-1XF" eventType="touchUpInside" id="qEr-qI-LcK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncU-mz-jrY">
+                                <rect key="frame" x="208" y="242" width="185" height="30"/>
+                                <state key="normal" title="Restore Previous Purchase">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restorePurchase:" destination="ZQw-rh-1XF" eventType="touchUpInside" id="bX5-ge-msx"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14R-TT-Wce">
+                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
+                                <color key="backgroundColor" red="0.1668884705" green="0.63406808039999996" blue="0.38979824299999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="vGk-zx-TTU"/>
+                                    <constraint firstAttribute="width" constant="600" id="yZj-Ou-fjl"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ncU-mz-jrY" secondAttribute="centerX" constant="-0.5" id="F8Q-gx-8nc"/>
+                            <constraint firstItem="ncU-mz-jrY" firstAttribute="top" secondItem="gzj-Uo-eOH" secondAttribute="bottom" constant="58" id="SNW-Qj-BOv"/>
+                            <constraint firstItem="pSn-jQ-2mj" firstAttribute="top" secondItem="14R-TT-Wce" secondAttribute="bottom" id="a3Q-LS-oso"/>
+                            <constraint firstAttribute="centerX" secondItem="14R-TT-Wce" secondAttribute="centerX" id="bvp-iE-Yla"/>
+                            <constraint firstItem="gzj-Uo-eOH" firstAttribute="top" secondItem="l7m-Es-y0a" secondAttribute="bottom" constant="90" id="kkJ-Vx-gcn"/>
+                            <constraint firstAttribute="centerX" secondItem="gzj-Uo-eOH" secondAttribute="centerX" id="xaF-m4-cgw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="IAP Demo" id="dAa-WV-9Mp"/>
+                    <connections>
+                        <outlet property="buyBtn" destination="gzj-Uo-eOH" id="Caj-tl-u4j"/>
+                        <outlet property="selectedPickView" destination="14R-TT-Wce" id="Bmo-qP-jGx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xql-0y-9xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334" y="219"/>
+        </scene>
+    </scenes>
+</document>
